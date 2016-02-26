@@ -3,21 +3,14 @@ module Test.Main where
 import Prelude
 import Control.Monad.Eff
 import Control.Monad.Aff.AVar (AVAR())
--- import Control.Monad.Eff.Console
-
--- main :: forall e. Eff (console :: CONSOLE | e) Unit
--- main = do
---   log "You should add some tests."
-
-import Node.Encoding
 
 import Test.Unit (test, runTest, timeout, TIMER())
 import Test.Unit.Assert as Assert
 import Test.Unit.Console (TESTOUTPUT())
 
+import Node.Encoding
 import Node.FS
 import Node.FS.Aff as FS
-
 
 main ::     forall a. Eff ( fs :: FS
                     , testOutput :: TESTOUTPUT
